@@ -1,0 +1,555 @@
+TimeQuest Timing Analyzer report for PC
+Fri Aug 09 16:29:54 2024
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Hold: 'clk'
+ 13. Setup Transfers
+ 14. Hold Transfers
+ 15. Report TCCS
+ 16. Report RSKM
+ 17. Unconstrained Paths Summary
+ 18. Clock Status Summary
+ 19. Unconstrained Input Ports
+ 20. Unconstrained Output Ports
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; PC                                                  ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM240T100C5                                        ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 201.09 MHz ; 201.09 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -3.973 ; -54.715       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 2.117 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.289 ; -2.289        ;
++-------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                     ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; -3.973 ; register:comb_7|out[3]  ; register:comb_7|out[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; register:comb_7|out[3]  ; register:comb_7|out[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; register:comb_7|out[3]  ; register:comb_7|out[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; register:comb_7|out[3]  ; register:comb_7|out[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; register:comb_7|out[3]  ; register:comb_7|out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.640      ;
+; -3.960 ; register:comb_7|out[3]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; register:comb_7|out[3]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; register:comb_7|out[3]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.627      ;
+; -3.851 ; register:comb_7|out[4]  ; register:comb_7|out[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; register:comb_7|out[4]  ; register:comb_7|out[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; register:comb_7|out[4]  ; register:comb_7|out[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; register:comb_7|out[4]  ; register:comb_7|out[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; register:comb_7|out[4]  ; register:comb_7|out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.518      ;
+; -3.838 ; register:comb_7|out[4]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.505      ;
+; -3.838 ; register:comb_7|out[4]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.505      ;
+; -3.838 ; register:comb_7|out[4]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.505      ;
+; -3.816 ; register:comb_7|out[1]  ; register:comb_7|out[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.483      ;
+; -3.816 ; register:comb_7|out[1]  ; register:comb_7|out[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.483      ;
+; -3.816 ; register:comb_7|out[1]  ; register:comb_7|out[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.483      ;
+; -3.816 ; register:comb_7|out[1]  ; register:comb_7|out[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.483      ;
+; -3.816 ; register:comb_7|out[1]  ; register:comb_7|out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.483      ;
+; -3.803 ; register:comb_7|out[1]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.470      ;
+; -3.803 ; register:comb_7|out[1]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.470      ;
+; -3.803 ; register:comb_7|out[1]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.470      ;
+; -3.716 ; register:comb_7|out[0]  ; register:comb_7|out[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.383      ;
+; -3.716 ; register:comb_7|out[0]  ; register:comb_7|out[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.383      ;
+; -3.716 ; register:comb_7|out[0]  ; register:comb_7|out[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.383      ;
+; -3.716 ; register:comb_7|out[0]  ; register:comb_7|out[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.383      ;
+; -3.716 ; register:comb_7|out[0]  ; register:comb_7|out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.383      ;
+; -3.703 ; register:comb_7|out[0]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.370      ;
+; -3.703 ; register:comb_7|out[0]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.370      ;
+; -3.703 ; register:comb_7|out[0]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.370      ;
+; -3.654 ; register:comb_7|out[2]  ; register:comb_7|out[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; register:comb_7|out[2]  ; register:comb_7|out[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; register:comb_7|out[2]  ; register:comb_7|out[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; register:comb_7|out[2]  ; register:comb_7|out[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; register:comb_7|out[2]  ; register:comb_7|out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.321      ;
+; -3.641 ; register:comb_7|out[2]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.308      ;
+; -3.641 ; register:comb_7|out[2]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.308      ;
+; -3.641 ; register:comb_7|out[2]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.308      ;
+; -3.605 ; register:comb_7|out[6]  ; register:comb_7|out[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.272      ;
+; -3.605 ; register:comb_7|out[6]  ; register:comb_7|out[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.272      ;
+; -3.605 ; register:comb_7|out[6]  ; register:comb_7|out[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.272      ;
+; -3.605 ; register:comb_7|out[6]  ; register:comb_7|out[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.272      ;
+; -3.605 ; register:comb_7|out[6]  ; register:comb_7|out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.272      ;
+; -3.592 ; register:comb_7|out[6]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.259      ;
+; -3.592 ; register:comb_7|out[6]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.259      ;
+; -3.592 ; register:comb_7|out[6]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.259      ;
+; -3.505 ; register:comb_7|out[5]  ; register:comb_7|out[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.172      ;
+; -3.505 ; register:comb_7|out[5]  ; register:comb_7|out[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.172      ;
+; -3.505 ; register:comb_7|out[5]  ; register:comb_7|out[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.172      ;
+; -3.505 ; register:comb_7|out[5]  ; register:comb_7|out[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.172      ;
+; -3.505 ; register:comb_7|out[5]  ; register:comb_7|out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.172      ;
+; -3.492 ; register:comb_7|out[5]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.159      ;
+; -3.492 ; register:comb_7|out[5]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.159      ;
+; -3.492 ; register:comb_7|out[5]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.159      ;
+; -3.362 ; register:comb_7|out[8]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.029      ;
+; -3.362 ; register:comb_7|out[8]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.029      ;
+; -3.362 ; register:comb_7|out[8]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.029      ;
+; -3.335 ; register:comb_7|out[7]  ; register:comb_7|out[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.002      ;
+; -3.335 ; register:comb_7|out[7]  ; register:comb_7|out[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 4.002      ;
+; -3.335 ; register:comb_7|out[7]  ; register:comb_7|out[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.002      ;
+; -3.335 ; register:comb_7|out[7]  ; register:comb_7|out[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.002      ;
+; -3.335 ; register:comb_7|out[7]  ; register:comb_7|out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 4.002      ;
+; -3.322 ; register:comb_7|out[7]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.989      ;
+; -3.322 ; register:comb_7|out[7]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.989      ;
+; -3.322 ; register:comb_7|out[7]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.989      ;
+; -3.231 ; register:comb_7|out[9]  ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.898      ;
+; -3.231 ; register:comb_7|out[9]  ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.898      ;
+; -3.231 ; register:comb_7|out[9]  ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.898      ;
+; -3.208 ; register:comb_7|out[1]  ; register:comb_7|out[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.875      ;
+; -3.208 ; register:comb_7|out[1]  ; register:comb_7|out[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.875      ;
+; -3.208 ; register:comb_7|out[1]  ; register:comb_7|out[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.875      ;
+; -3.208 ; register:comb_7|out[1]  ; register:comb_7|out[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.875      ;
+; -3.208 ; register:comb_7|out[1]  ; register:comb_7|out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.875      ;
+; -3.208 ; register:comb_7|out[11] ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.875      ;
+; -3.208 ; register:comb_7|out[11] ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.875      ;
+; -3.208 ; register:comb_7|out[11] ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.875      ;
+; -3.109 ; register:comb_7|out[3]  ; register:comb_7|out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.776      ;
+; -3.108 ; register:comb_7|out[10] ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.775      ;
+; -3.108 ; register:comb_7|out[10] ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.775      ;
+; -3.108 ; register:comb_7|out[10] ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.775      ;
+; -3.108 ; register:comb_7|out[0]  ; register:comb_7|out[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.775      ;
+; -3.108 ; register:comb_7|out[0]  ; register:comb_7|out[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.775      ;
+; -3.108 ; register:comb_7|out[0]  ; register:comb_7|out[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.775      ;
+; -3.108 ; register:comb_7|out[0]  ; register:comb_7|out[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.775      ;
+; -3.108 ; register:comb_7|out[0]  ; register:comb_7|out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.775      ;
+; -3.046 ; register:comb_7|out[12] ; register:comb_7|out[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; register:comb_7|out[12] ; register:comb_7|out[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; register:comb_7|out[12] ; register:comb_7|out[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; register:comb_7|out[2]  ; register:comb_7|out[3]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; register:comb_7|out[2]  ; register:comb_7|out[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; register:comb_7|out[2]  ; register:comb_7|out[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; register:comb_7|out[2]  ; register:comb_7|out[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.713      ;
+; -3.046 ; register:comb_7|out[2]  ; register:comb_7|out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.713      ;
+; -2.987 ; register:comb_7|out[4]  ; register:comb_7|out[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.654      ;
+; -2.986 ; register:comb_7|out[3]  ; register:comb_7|out[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.653      ;
+; -2.895 ; register:comb_7|out[8]  ; register:comb_7|out[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 3.562      ;
+; -2.864 ; register:comb_7|out[4]  ; register:comb_7|out[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.531      ;
+; -2.863 ; register:comb_7|out[3]  ; register:comb_7|out[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 3.530      ;
++--------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                     ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node               ; To Node                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+; 2.117 ; register:comb_7|out[0]  ; register:comb_7|out[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; register:comb_7|out[5]  ; register:comb_7|out[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; register:comb_7|out[7]  ; register:comb_7|out[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; register:comb_7|out[9]  ; register:comb_7|out[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; register:comb_7|out[10] ; register:comb_7|out[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.125 ; register:comb_7|out[8]  ; register:comb_7|out[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.346      ;
+; 2.126 ; register:comb_7|out[15] ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.230 ; register:comb_7|out[3]  ; register:comb_7|out[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; register:comb_7|out[13] ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; register:comb_7|out[1]  ; register:comb_7|out[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; register:comb_7|out[2]  ; register:comb_7|out[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; register:comb_7|out[4]  ; register:comb_7|out[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; register:comb_7|out[6]  ; register:comb_7|out[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; register:comb_7|out[11] ; register:comb_7|out[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; register:comb_7|out[12] ; register:comb_7|out[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; register:comb_7|out[14] ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.949 ; register:comb_7|out[0]  ; register:comb_7|out[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; register:comb_7|out[5]  ; register:comb_7|out[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; register:comb_7|out[9]  ; register:comb_7|out[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; register:comb_7|out[10] ; register:comb_7|out[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.170      ;
+; 2.957 ; register:comb_7|out[8]  ; register:comb_7|out[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.178      ;
+; 3.060 ; register:comb_7|out[0]  ; register:comb_7|out[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; register:comb_7|out[5]  ; register:comb_7|out[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; register:comb_7|out[10] ; register:comb_7|out[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; register:comb_7|out[9]  ; register:comb_7|out[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.281      ;
+; 3.068 ; register:comb_7|out[8]  ; register:comb_7|out[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.289      ;
+; 3.170 ; register:comb_7|out[3]  ; register:comb_7|out[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; register:comb_7|out[13] ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171 ; register:comb_7|out[4]  ; register:comb_7|out[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; register:comb_7|out[14] ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; register:comb_7|out[1]  ; register:comb_7|out[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; register:comb_7|out[6]  ; register:comb_7|out[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; register:comb_7|out[11] ; register:comb_7|out[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; register:comb_7|out[9]  ; register:comb_7|out[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.392      ;
+; 3.179 ; register:comb_7|out[8]  ; register:comb_7|out[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.400      ;
+; 3.281 ; register:comb_7|out[3]  ; register:comb_7|out[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281 ; register:comb_7|out[13] ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.502      ;
+; 3.282 ; register:comb_7|out[4]  ; register:comb_7|out[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.503      ;
+; 3.290 ; register:comb_7|out[8]  ; register:comb_7|out[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.511      ;
+; 3.392 ; register:comb_7|out[3]  ; register:comb_7|out[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.613      ;
+; 3.393 ; register:comb_7|out[4]  ; register:comb_7|out[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.614      ;
+; 3.492 ; register:comb_7|out[2]  ; register:comb_7|out[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; register:comb_7|out[2]  ; register:comb_7|out[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; register:comb_7|out[2]  ; register:comb_7|out[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; register:comb_7|out[2]  ; register:comb_7|out[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; register:comb_7|out[2]  ; register:comb_7|out[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; register:comb_7|out[12] ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; register:comb_7|out[12] ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; register:comb_7|out[12] ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.713      ;
+; 3.503 ; register:comb_7|out[3]  ; register:comb_7|out[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.724      ;
+; 3.529 ; register:comb_7|out[0]  ; register:comb_7|out[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; register:comb_7|out[0]  ; register:comb_7|out[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; register:comb_7|out[0]  ; register:comb_7|out[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; register:comb_7|out[0]  ; register:comb_7|out[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; register:comb_7|out[0]  ; register:comb_7|out[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; register:comb_7|out[10] ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; register:comb_7|out[10] ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; register:comb_7|out[10] ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.750      ;
+; 3.640 ; register:comb_7|out[1]  ; register:comb_7|out[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[1]  ; register:comb_7|out[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[1]  ; register:comb_7|out[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[1]  ; register:comb_7|out[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[1]  ; register:comb_7|out[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[11] ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[9]  ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[11] ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[9]  ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[11] ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.640 ; register:comb_7|out[9]  ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.861      ;
+; 3.759 ; register:comb_7|out[8]  ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.980      ;
+; 3.759 ; register:comb_7|out[8]  ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.980      ;
+; 3.759 ; register:comb_7|out[8]  ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.980      ;
+; 3.768 ; register:comb_7|out[7]  ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.989      ;
+; 3.768 ; register:comb_7|out[7]  ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.989      ;
+; 3.768 ; register:comb_7|out[7]  ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 3.989      ;
+; 3.781 ; register:comb_7|out[7]  ; register:comb_7|out[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.002      ;
+; 3.781 ; register:comb_7|out[7]  ; register:comb_7|out[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.002      ;
+; 3.781 ; register:comb_7|out[7]  ; register:comb_7|out[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.002      ;
+; 3.781 ; register:comb_7|out[7]  ; register:comb_7|out[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.002      ;
+; 3.781 ; register:comb_7|out[7]  ; register:comb_7|out[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.002      ;
+; 3.910 ; register:comb_7|out[5]  ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.131      ;
+; 3.910 ; register:comb_7|out[5]  ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.131      ;
+; 3.910 ; register:comb_7|out[5]  ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.131      ;
+; 3.923 ; register:comb_7|out[5]  ; register:comb_7|out[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.144      ;
+; 3.923 ; register:comb_7|out[5]  ; register:comb_7|out[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.144      ;
+; 3.923 ; register:comb_7|out[5]  ; register:comb_7|out[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.144      ;
+; 3.923 ; register:comb_7|out[5]  ; register:comb_7|out[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.144      ;
+; 3.923 ; register:comb_7|out[5]  ; register:comb_7|out[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.144      ;
+; 4.021 ; register:comb_7|out[6]  ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.242      ;
+; 4.021 ; register:comb_7|out[6]  ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.242      ;
+; 4.021 ; register:comb_7|out[6]  ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.242      ;
+; 4.034 ; register:comb_7|out[6]  ; register:comb_7|out[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.255      ;
+; 4.034 ; register:comb_7|out[6]  ; register:comb_7|out[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.255      ;
+; 4.034 ; register:comb_7|out[6]  ; register:comb_7|out[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.255      ;
+; 4.034 ; register:comb_7|out[6]  ; register:comb_7|out[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.255      ;
+; 4.034 ; register:comb_7|out[6]  ; register:comb_7|out[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.255      ;
+; 4.087 ; register:comb_7|out[2]  ; register:comb_7|out[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.308      ;
+; 4.087 ; register:comb_7|out[2]  ; register:comb_7|out[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.308      ;
+; 4.087 ; register:comb_7|out[2]  ; register:comb_7|out[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 4.308      ;
+; 4.100 ; register:comb_7|out[2]  ; register:comb_7|out[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 4.321      ;
++-------+-------------------------+-------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 232      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 232      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 19    ; 19   ;
+; Unconstrained Input Port Paths  ; 64    ; 64   ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 16    ; 16   ;
++---------------------------------+-------+------+
+
+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
++--------+-------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; in[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[4]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[10]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[11]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[12]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[13]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[14]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[15]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inc        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; load       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; out[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[8]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[9]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[10]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[11]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[12]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[13]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[14]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[15]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; in[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[3]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[4]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[10]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[11]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[12]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[13]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[14]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; in[15]     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; inc        ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; load       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; out[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[3]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[4]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[5]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[6]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[7]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[8]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[9]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[10]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[11]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[12]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[13]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[14]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; out[15]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+    Info: Processing started: Fri Aug 09 16:29:54 2024
+Info: Command: quartus_sta PC -c PC
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'PC.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.973
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.973             -54.715 clk 
+Info (332146): Worst-case hold slack is 2.117
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     2.117               0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4838 megabytes
+    Info: Processing ended: Fri Aug 09 16:29:54 2024
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

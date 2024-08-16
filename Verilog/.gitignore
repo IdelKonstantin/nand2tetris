@@ -1,0 +1,27 @@
+# Quartus project files
+*.qsf           # Quartus Settings File
+*.qpf           # Quartus Project File
+*.qsf.lock      # Lock file for the project
+*.qpf.lock      # Lock file for the project
+
+# Compilation output
+output_files/   # Folder for output files
+db/             # Database files
+incremental_db/ # Incremental database files
+
+# Simulation files
+simulation/     # Folder for simulation results
+
+# Temporary files
+*.tmp           # Temporary files
+*.log           # Log files
+*.rpt           # Report files
+
+# Backup files
+*~              # Backup files created by text editors
+
+# Other IDE-specific files
+*.sdc           # Synopsys Design Constraints
+*.sdf           # Standard Delay Format
+*.bak
+*.json

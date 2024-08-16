@@ -1,0 +1,35 @@
+|not_16
+a[0] => y[0].DATAIN
+a[1] => y[1].DATAIN
+a[2] => y[2].DATAIN
+a[3] => y[3].DATAIN
+a[4] => y[4].DATAIN
+a[5] => y[5].DATAIN
+a[6] => y[6].DATAIN
+a[7] => y[7].DATAIN
+a[8] => y[8].DATAIN
+a[9] => y[9].DATAIN
+a[10] => y[10].DATAIN
+a[11] => y[11].DATAIN
+a[12] => y[12].DATAIN
+a[13] => y[13].DATAIN
+a[14] => y[14].DATAIN
+a[15] => y[15].DATAIN
+y[0] <= a[0].DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= a[4].DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= a[5].DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= a[6].DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= a[7].DB_MAX_OUTPUT_PORT_TYPE
+y[8] <= a[8].DB_MAX_OUTPUT_PORT_TYPE
+y[9] <= a[9].DB_MAX_OUTPUT_PORT_TYPE
+y[10] <= a[10].DB_MAX_OUTPUT_PORT_TYPE
+y[11] <= a[11].DB_MAX_OUTPUT_PORT_TYPE
+y[12] <= a[12].DB_MAX_OUTPUT_PORT_TYPE
+y[13] <= a[13].DB_MAX_OUTPUT_PORT_TYPE
+y[14] <= a[14].DB_MAX_OUTPUT_PORT_TYPE
+y[15] <= a[15].DB_MAX_OUTPUT_PORT_TYPE
+
+

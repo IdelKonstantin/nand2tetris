@@ -1,0 +1,445 @@
+Analysis & Synthesis report for CPU
+Wed Aug 14 12:11:00 2024
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "PC:PC_Hack|register:comb_7"
+ 12. Port Connectivity Checks: "PC:PC_Hack|mux2in1_16:comb_6"
+ 13. Port Connectivity Checks: "PC:PC_Hack|inc_16:comb_3|add_16:comb_3"
+ 14. Port Connectivity Checks: "PC:PC_Hack"
+ 15. Port Connectivity Checks: "ALU:ALU_Hack|mux2in1_16:zyMux"
+ 16. Port Connectivity Checks: "ALU:ALU_Hack|mux2in1_16:zxMux"
+ 17. Port Connectivity Checks: "register:Dregister"
+ 18. Port Connectivity Checks: "register:Aregister"
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Wed Aug 14 12:11:00 2024       ;
+; Quartus Prime Version       ; 15.1.0 Build 185 10/21/2015 SJ Lite Edition ;
+; Revision Name               ; CPU                                         ;
+; Top-level Entity Name       ; CPU                                         ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 65                                          ;
+; Total pins                  ; 80                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM240T100C5       ;                    ;
+; Top-level entity name                                                      ; CPU                ; CPU                ;
+; Family name                                                                ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                        ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; ../../inc_16/inc_16.v            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/inc_16/inc_16.v         ;         ;
+; ../../not_16/not_16.v            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/not_16/not_16.v         ;         ;
+; ../../and_16/and_16.v            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/and_16/and_16.v         ;         ;
+; ../../add_16/add_16.v            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/add_16/add_16.v         ;         ;
+; ../../mux2in1_16/mux2in1_16.v    ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/mux2in1_16/mux2in1_16.v ;         ;
+; ../../or8in1/or8in1.v            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/or8in1/or8in1.v         ;         ;
+; ../../PC/PC.v                    ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/PC/PC.v                 ;         ;
+; ../../regs/register.v            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/regs/register.v         ;         ;
+; ../ALU.v                         ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/ALU.v               ;         ;
+; CPU.v                            ; yes             ; User Verilog HDL File  ; C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v  ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Total logic elements                        ; 65             ;
+;     -- Combinational with no register       ; 65             ;
+;     -- Register only                        ; 0              ;
+;     -- Combinational with a register        ; 0              ;
+;                                             ;                ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 48             ;
+;     -- 3 input functions                    ; 15             ;
+;     -- 2 input functions                    ; 2              ;
+;     -- 1 input functions                    ; 0              ;
+;     -- 0 input functions                    ; 0              ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 50             ;
+;     -- arithmetic mode                      ; 15             ;
+;     -- qfbk mode                            ; 0              ;
+;     -- register cascade mode                ; 0              ;
+;     -- synchronous clear/load mode          ; 0              ;
+;     -- asynchronous clear/load mode         ; 0              ;
+;                                             ;                ;
+; Total registers                             ; 0              ;
+; Total logic cells in carry chains           ; 16             ;
+; I/O pins                                    ; 80             ;
+; Maximum fan-out node                        ; instruction[6] ;
+; Maximum fan-out                             ; 32             ;
+; Total fan-out                               ; 258            ;
+; Average fan-out                             ; 1.78           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+--------------+
+; |CPU                       ; 65 (1)      ; 0            ; 0          ; 80   ; 0            ; 65 (1)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |CPU                               ; work         ;
+;    |ALU:ALU_Hack|          ; 64 (0)      ; 0            ; 0          ; 0    ; 0            ; 64 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |CPU|ALU:ALU_Hack                  ; work         ;
+;       |add_16:assNxNy|     ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 16 (16)         ; 0 (0)      ; |CPU|ALU:ALU_Hack|add_16:assNxNy   ; work         ;
+;       |mux2in1_16:noMux|   ; 32 (32)     ; 0            ; 0          ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|ALU:ALU_Hack|mux2in1_16:noMux ; work         ;
+;       |mux2in1_16:nyMux|   ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|ALU:ALU_Hack|mux2in1_16:nyMux ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                            ;
++----------------------------------------+--------------------------------------+
+; Register name                          ; Reason for Removal                   ;
++----------------------------------------+--------------------------------------+
+; PC:PC_Hack|register:comb_7|out[0..15]  ; Stuck at GND due to stuck port clock ;
+; register:Dregister|out[0..15]          ; Stuck at GND due to stuck port clock ;
+; register:Aregister|out[0..15]          ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 48 ;                                      ;
++----------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |CPU|ALU:ALU_Hack|mux2in1_16:noMux|y[0] ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |CPU|ALU:ALU_Hack|mux2in1_16:nyMux|y[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PC:PC_Hack|register:comb_7"                                                                                                                                                           ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                                                                                                                                                            ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; load     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; load[-1] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
++----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "PC:PC_Hack|mux2in1_16:comb_6" ;
++------+-------+----------+--------------------------------+
+; Port ; Type  ; Severity ; Details                        ;
++------+-------+----------+--------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                   ;
++------+-------+----------+--------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "PC:PC_Hack|inc_16:comb_3|add_16:comb_3" ;
++----------+-------+----------+--------------------------------------+
+; Port     ; Type  ; Severity ; Details                              ;
++----------+-------+----------+--------------------------------------+
+; b[15..1] ; Input ; Info     ; Stuck at GND                         ;
+; b[0]     ; Input ; Info     ; Stuck at VCC                         ;
++----------+-------+----------+--------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PC:PC_Hack"                                                                                                                                     ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; inc     ; Input  ; Info     ; Stuck at VCC                                                                                                                                 ;
+; out[15] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
+; clk     ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALU_Hack|mux2in1_16:zyMux" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALU_Hack|mux2in1_16:zxMux" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "register:Dregister"   ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; clk  ; Input ; Info     ; Explicitly unconnected ;
++------+-------+----------+------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "register:Aregister"   ;
++------+-------+----------+------------------------+
+; Port ; Type  ; Severity ; Details                ;
++------+-------+----------+------------------------+
+; clk  ; Input ; Info     ; Explicitly unconnected ;
++------+-------+----------+------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+    Info: Processing started: Wed Aug 14 12:10:54 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CPU -c CPU
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/documents/n2t/quartus_verylog/inc_16/inc_16.v
+    Info (12023): Found entity 1: inc_16 File: C:/Users/user/Documents/N2T/Quartus_Verylog/inc_16/inc_16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/documents/n2t/quartus_verylog/not_16/not_16.v
+    Info (12023): Found entity 1: not_16 File: C:/Users/user/Documents/N2T/Quartus_Verylog/not_16/not_16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/documents/n2t/quartus_verylog/and_16/and_16.v
+    Info (12023): Found entity 1: and_16 File: C:/Users/user/Documents/N2T/Quartus_Verylog/and_16/and_16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/documents/n2t/quartus_verylog/add_16/add_16.v
+    Info (12023): Found entity 1: add_16 File: C:/Users/user/Documents/N2T/Quartus_Verylog/add_16/add_16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/documents/n2t/quartus_verylog/mux2in1_16/mux2in1_16.v
+    Info (12023): Found entity 1: mux2in1_16 File: C:/Users/user/Documents/N2T/Quartus_Verylog/mux2in1_16/mux2in1_16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/documents/n2t/quartus_verylog/or8in1/or8in1.v
+    Info (12023): Found entity 1: or8in1 File: C:/Users/user/Documents/N2T/Quartus_Verylog/or8in1/or8in1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/documents/n2t/quartus_verylog/pc/pc.v
+    Info (12023): Found entity 1: PC File: C:/Users/user/Documents/N2T/Quartus_Verylog/PC/PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/documents/n2t/quartus_verylog/regs/register.v
+    Info (12023): Found entity 1: register File: C:/Users/user/Documents/N2T/Quartus_Verylog/regs/register.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /users/user/documents/n2t/quartus_verylog/alu/alu.v
+    Info (12023): Found entity 1: ALU File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/ALU.v Line: 26
+Info (12021): Found 2 design units, including 2 entities, in source file cpu.v
+    Info (12023): Found entity 1: or3in1 File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 1
+    Info (12023): Found entity 2: CPU File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 12
+Warning (10236): Verilog HDL Implicit Net warning at ALU.v(65): created implicit net for "anyBitsTrue" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/ALU.v Line: 65
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(37): created implicit net for "instrType" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 37
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(38): created implicit net for "isAcommand" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 38
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(39): created implicit net for "saveToRegA" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 39
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(40): created implicit net for "loadInAreg" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 40
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(58): created implicit net for "a" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 58
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(64): created implicit net for "saveToRegD" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 64
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(65): created implicit net for "loadD" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 65
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(78): created implicit net for "saveToM" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 78
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(91): created implicit net for "zr" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 91
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(92): created implicit net for "ng" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 92
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(99): created implicit net for "notZero" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 99
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(100): created implicit net for "notNegative" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 100
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(101): created implicit net for "isPositive" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 101
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(104): created implicit net for "JGT" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 104
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(105): created implicit net for "JEQ" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 105
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(106): created implicit net for "JLT" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 106
+Critical Warning (10846): Verilog HDL Instantiation warning at inc_16.v(7): instance has no name File: C:/Users/user/Documents/N2T/Quartus_Verylog/inc_16/inc_16.v Line: 7
+Critical Warning (10846): Verilog HDL Instantiation warning at PC.v(10): instance has no name File: C:/Users/user/Documents/N2T/Quartus_Verylog/PC/PC.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at PC.v(11): instance has no name File: C:/Users/user/Documents/N2T/Quartus_Verylog/PC/PC.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at PC.v(12): instance has no name File: C:/Users/user/Documents/N2T/Quartus_Verylog/PC/PC.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at PC.v(13): instance has no name File: C:/Users/user/Documents/N2T/Quartus_Verylog/PC/PC.v Line: 13
+Critical Warning (10846): Verilog HDL Instantiation warning at PC.v(15): instance has no name File: C:/Users/user/Documents/N2T/Quartus_Verylog/PC/PC.v Line: 15
+Info (12127): Elaborating entity "CPU" for the top level hierarchy
+Info (12128): Elaborating entity "mux2in1_16" for hierarchy "mux2in1_16:instrMux" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 31
+Info (12128): Elaborating entity "register" for hierarchy "register:Aregister" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 51
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU_Hack" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 93
+Info (12128): Elaborating entity "not_16" for hierarchy "ALU:ALU_Hack|not_16:notzxMux" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/ALU.v Line: 45
+Info (12128): Elaborating entity "add_16" for hierarchy "ALU:ALU_Hack|add_16:assNxNy" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/ALU.v Line: 52
+Info (12128): Elaborating entity "and_16" for hierarchy "ALU:ALU_Hack|and_16:andNxNy" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/ALU.v Line: 53
+Info (12128): Elaborating entity "or8in1" for hierarchy "ALU:ALU_Hack|or8in1:orHighBits" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/ALU.v Line: 62
+Info (12128): Elaborating entity "or3in1" for hierarchy "or3in1:jumpers" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 114
+Info (12128): Elaborating entity "PC" for hierarchy "PC:PC_Hack" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 125
+Info (12128): Elaborating entity "inc_16" for hierarchy "PC:PC_Hack|inc_16:comb_3" File: C:/Users/user/Documents/N2T/Quartus_Verylog/PC/PC.v Line: 10
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "adressM[0]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[1]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[2]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[3]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[4]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[5]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[6]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[7]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[8]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[9]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[10]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[11]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[12]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[13]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "adressM[14]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 21
+    Warning (13410): Pin "pc[0]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[1]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[2]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[3]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[4]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[5]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[6]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[7]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[8]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[9]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[10]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[11]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[12]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[13]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+    Warning (13410): Pin "pc[14]" is stuck at GND File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 23
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "instruction[0]" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 16
+    Warning (15610): No output dependent on input pin "instruction[1]" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 16
+    Warning (15610): No output dependent on input pin "instruction[2]" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 16
+    Warning (15610): No output dependent on input pin "instruction[4]" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 16
+    Warning (15610): No output dependent on input pin "instruction[5]" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 16
+    Warning (15610): No output dependent on input pin "instruction[11]" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 16
+    Warning (15610): No output dependent on input pin "instruction[13]" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 16
+    Warning (15610): No output dependent on input pin "instruction[14]" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 16
+    Warning (15610): No output dependent on input pin "reset" File: C:/Users/user/Documents/N2T/Quartus_Verylog/ALU/output_files/CPU.v Line: 17
+Info (21057): Implemented 145 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 33 input pins
+    Info (21059): Implemented 47 output pins
+    Info (21061): Implemented 65 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 66 warnings
+    Info: Peak virtual memory: 4893 megabytes
+    Info: Processing ended: Wed Aug 14 12:11:00 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:12
+
+
